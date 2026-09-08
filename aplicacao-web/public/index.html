@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Endereços</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header class="menu">
+
+    <div class="menu-container">
+
+        <h1 class="logo">Projeto ViaCEP</h1>
+
+        <nav>
+            <a href="" class="ativo">Endereços</a>
+            <a href="cadastro.html">Cadastrar</a>
+            <a href="remover.html">Remover</a>
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main class="container">
+
+    <div class="cabecalho">
+
+        <div>
+            <h2>Endereços cadastrados</h2>
+
+            <p id="quantidade-enderecos">
+                Nenhum endereço cadastrado ainda.
+            </p>
+        </div>
+
+    </div>
+
+    <div id="tabela-container" class="tabela-container">
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>CEP</th>
+                    <th>Nº</th>
+                    <th>RUA</th>
+                    <th>CIDADE</th>
+                    <th>UF</th>
+                    <th>COMPLEMENTO</th>
+                </tr>
+            </thead>
+
+            <tbody id="tabela-enderecos">
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <div id="nenhum-endereco" class="nenhum-endereco">
+
+        <div class="icone-caixa">
+
+            <div class="caixa"></div>
+
+            <div class="poste"></div>
+
+        </div>
+
+        <p>
+            Nenhum endereço cadastrado.
+            <a href="cadastro.html">Cadastrar agora</a>
+        </p>
+
+    </div>
+
+</main>
+
+
+<button class="ajuda">?</button>
+
+<script src="js/index.js"></script>
+
+</body>
+</html>

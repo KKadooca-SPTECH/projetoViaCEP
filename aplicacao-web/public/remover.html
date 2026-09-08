@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remover endereço</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header class="menu">
+    <div class="menu-container">
+
+        <h1 class="logo">Projeto ViaCEP</h1>
+
+        <nav>
+            <a href="../public/index.html">Endereços</a>
+            <a href="../public/cadastro.html">Cadastrar</a>
+            <a href="" class="ativo">Remover</a>
+        </nav>
+
+    </div>
+</header>
+
+<main class="container">
+
+    <div class="cabecalho-remover">
+        <h2>Remover endereço</h2>
+        <p>
+            Informe o CEP e o número para identificar o endereço a remover.
+        </p>
+    </div>
+
+    <form class="formulario-remover">
+
+        <div class="linha">
+
+            <div class="campo cep">
+                <label for="cep">CEP</label>
+                <input type="text" id="cep" name="cep" placeholder="00000-000" maxlength="9" autocomplete="off">
+            </div>
+
+            <div class="campo numero">
+                <label for="numero">NÚMERO</label>
+                <input type="text" id="numero" name="numero" disabled autocomplete="off">
+            </div>
+        </div>
+
+        <div class="linha">
+            <div class="campo campo-completo">
+                <label for="complemento">COMPLEMENTO</label>
+                <input type="text" id="complemento" name="complemento" disabled autocomplete="off">
+            </div>
+        </div>
+
+        <div id="sugestoes" class="sugestoes-remover">
+            <div id="mensagem-sugestoes" class="mensagem-sugestoes"></div>
+            <div id="numeros-sugestao" class="numeros-sugestao"></div>
+        </div>
+
+    </div>
+
+        <div
+            id="sugestoes"
+            class="sugestoes-remover"
+        >
+
+            <div
+                id="mensagem-sugestoes"
+                class="mensagem-sugestoes"
+            ></div>
+
+            <div
+                id="numeros-sugestao"
+                class="numeros-sugestao"
+            ></div>
+
+        </div>
+
+        <div
+            id="endereco-encontrado"
+            class="card-endereco-encontrado"
+        >
+
+            <div class="titulo-card">
+                ENDEREÇO ENCONTRADO
+            </div>
+
+            <div class="dados-endereco">
+
+                <div class="dado">
+                    <span>CEP</span>
+                    <strong id="preview-cep"></strong>
+                </div>
+
+                <div class="dado numero-preview">
+                    <span>Número</span>
+                    <strong id="preview-numero"></strong>
+                </div>
+
+                <div class="dado dado-completo">
+                    <span>Rua</span>
+                    <strong id="preview-rua"></strong>
+                </div>
+
+                <div class="dado">
+                    <span>Cidade</span>
+                    <strong id="preview-cidade"></strong>
+                </div>
+
+                <div class="dado">
+                    <span>Estado</span>
+                    <strong id="preview-estado"></strong>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div
+            id="endereco-nao-encontrado"
+            class="card-endereco-nao-encontrado"
+        >
+
+            <div class="titulo-card-erro">
+                ENDEREÇO NÃO ENCONTRADO
+            </div>
+
+            <div class="mensagem-erro">
+
+                <span class="icone-alerta">!</span>
+
+                <p>
+                    Nenhum endereço foi localizado para os dados informados.
+                    Verifique o CEP e o número digitados.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="acoes">
+
+            <button type="button" id="btn-remover" class="btn-remover" disabled>
+                Remover endereço
+            </button>
+
+            <button type="button" id="btn-cancelar" class="btn-cancelar-remover" onclick="window.location.href='index.html'">
+                Cancelar
+            </button>
+
+            <button type="button" id="btn-alterar" class="btn-cancelar-remover" style="display: none;">
+                Alterar endereço
+            </button>
+
+        </div>
+
+    </form>
+
+</main>
+
+<button
+    type="button"
+    class="ajuda"
+>
+    ?
+</button>
+
+<div id="modal-mensagem" class="modal-mensagem">
+    <div class="modal-card">
+        <div id="modal-icone" class="modal-icone">✓</div>
+        <p id="modal-texto"></p>
+    </div>
+</div>
+
+<script src="js/remover.js"></script>
+
+</body>
+</html>

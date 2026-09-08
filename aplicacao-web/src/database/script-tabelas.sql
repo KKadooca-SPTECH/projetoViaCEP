@@ -1,0 +1,22 @@
+CREATE DATABASE viacep;
+
+USE viacep;
+
+CREATE TABLE endereco (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    cep VARCHAR(9) NOT NULL,
+    numero VARCHAR(10) NOT NULL,
+    rua VARCHAR(150) NOT NULL,
+    cidade VARCHAR(100) NOT NULL,
+    estado VARCHAR(2) NOT NULL,
+    pais VARCHAR(50) NOT NULL
+);
+
+ALTER TABLE endereco
+ADD COLUMN data DATE NOT NULL,
+ADD COLUMN tipo_endereco VARCHAR(20) NOT NULL,
+ADD COLUMN tem_complemento BOOLEAN NOT NULL,
+ADD COLUMN tipo_complemento VARCHAR(50),
+ADD COLUMN complemento VARCHAR(100);
+
+SELECT * FROM endereco;

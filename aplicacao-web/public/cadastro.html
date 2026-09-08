@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar endereço</title>
+
+<link rel="stylesheet" href="../public/css/style.css">
+
+</head>
+
+<body>
+
+<header class="menu">
+    <div class="menu-container">
+
+        <h1 class="logo">Projeto ViaCEP</h1>
+
+        <nav>
+            <a href="index.html">Endereços</a>
+            <a href="" class="ativo">Cadastrar</a>
+            <a href="../public/remover.html">Remover</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<main class="container">
+
+    <section class="formulario">
+
+        <div class="cabecalho">
+            <h2>Cadastrar endereço</h2>
+
+            <p>
+                Digite o CEP e o número. Os demais campos são preenchidos automaticamente.
+            </p>
+        </div>
+
+
+        <div id="loading" class="loading">
+            <div class="loading-card">
+                <div class="spinner"></div>
+                <p>Consultando CEP...</p>
+            </div>
+        </div>
+
+        <div id="modal-mensagem" class="modal-mensagem">
+            <div class="modal-card">
+                <div id="modal-icone" class="modal-icone">
+                    ✓
+                </div>
+                <p id="modal-texto"></p>
+            </div>
+        </div>
+
+
+        <form id="form-endereco">
+
+            <div class="linha">
+
+                <div class="campo cep">
+                    <label for="cep">
+                        CEP <span>*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="cep"
+                        name="cep"
+                        maxlength="9"
+                        placeholder="00000-000"
+                    >
+                </div>
+
+
+                <div class="campo numero">
+                    <label for="numero">
+                        NÚMERO <span>*</span>
+                    </label>
+
+                    <input
+                        type="number"
+                        id="numero"
+                        name="numero"
+                    >
+                </div>
+
+            </div>
+
+
+            <div class="linha">
+
+                <div class="campo campo-completo">
+                    <label for="rua">RUA</label>
+
+                    <input
+                        type="text"
+                        id="rua"
+                        name="rua"
+                        readonly
+                    >
+                </div>
+
+            </div>
+
+
+            <div class="linha">
+
+                <div class="campo cidade">
+                    <label for="cidade">CIDADE</label>
+
+                    <input
+                        type="text"
+                        id="cidade"
+                        name="cidade"
+                        readonly
+                    >
+                </div>
+
+
+                <div class="campo estado">
+                    <label for="estado">ESTADO</label>
+
+                    <input
+                        type="text"
+                        id="estado"
+                        name="estado"
+                        readonly
+                    >
+                </div>
+
+            </div>
+
+
+            <div class="linha">
+
+                <div class="campo campo-completo">
+                    <label for="pais">PAÍS</label>
+
+                    <input
+                        type="text"
+                        id="pais"
+                        name="pais"
+                        readonly
+                    >
+                </div>
+
+            </div>
+
+
+            <div class="linha">
+
+                <div class="campo campo-completo">
+                    <label for="data">
+                        DATA DE CADASTRO
+                    </label>
+
+                    <input
+                        type="date"
+                        id="data"
+                        name="data"
+                        readonly
+                    >
+                </div>
+
+            </div>
+
+
+            <div class="grupo-campo">
+
+                <label class="titulo-grupo">
+                    TIPO DE ENDEREÇO <span>*</span>
+                </label>
+
+                <div class="opcoes-radio">
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="tipoEndereco"
+                            value="Residencial"
+                        >
+                        Residencial
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="tipoEndereco"
+                            value="Comercial"
+                        >
+                        Comercial
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <div class="grupo-campo">
+
+                <label class="opcao-checkbox">
+
+                    <input
+                        type="checkbox"
+                        id="temComplemento"
+                        name="temComplemento"
+                    >
+
+                    <span>Contém complemento</span>
+
+                </label>
+
+            </div>
+
+
+            <div
+                id="campos-complemento"
+                class="campos-complemento"
+            >
+
+                <div class="linha">
+
+                    <div class="campo tipo-complemento">
+                        <label for="tipoComplemento">
+                            TIPO DE COMPLEMENTO <span>*</span>
+                        </label>
+
+                        <select
+                            id="tipoComplemento"
+                            name="tipoComplemento"
+                        >
+                            <option value="">
+                                Selecione
+                            </option>
+                        </select>
+                    </div>
+
+
+                    <div class="campo valor-complemento">
+                        <label for="complemento">
+                            COMPLEMENTO <span>*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="complemento"
+                            name="complemento"
+                        >
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="acoes">
+
+                <button
+                    type="button"
+                    id="btn-salvar"  
+                    class="btn-salvar"
+                    disabled
+                >
+                    Salvar endereço
+                </button>
+
+                <button
+                    type="button"
+                    class="btn-cancelar"
+                    onclick="window.location.href='index.html'"
+                >
+                    Cancelar
+                </button>
+
+            </div>
+
+        </form>
+
+    </section>
+
+</main>
+
+
+<button class="ajuda">?</button>
+
+
+<script src="../public/js/cadastro.js"></script>
+
+</body>
+
+</html>
